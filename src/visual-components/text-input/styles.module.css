@@ -1,0 +1,14 @@
+.textInput {
+  background-color: #f7f7f7;
+  height: 48px;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  font-size: 14px;
+  font: Roboto-Regular;
+  color: #666666;
+}
+
+.textInput:focus {
+  background-color: #ffffff;
+  border: 1px solid #00adee;
+}

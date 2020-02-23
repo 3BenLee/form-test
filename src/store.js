@@ -1,7 +1,14 @@
-import { createStore } from 'redux';
-import rootReducer from './reducers/step-one-reducer';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore, applyMiddleware, compose } from 'redux';
+import createReducer from './reducers/step-one-reducer';
 
-const store = createStore(rootReducer, composeWithDevTools());
+const composeEnhancers =
+  typeof window === 'object' &&
+  (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose);
 
-export default store;
+export function configureStore() {
+  const middlewares = [];
+  const store = createStore(createReducer(), {}, composeEnhancers(applyMiddleware(...middlewares)));
+  return store;
+}
+
+export default configureStore;

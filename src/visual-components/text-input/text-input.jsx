@@ -6,6 +6,7 @@ export const TextInput = props => {
 
   return (
     <div className={styles.container}>
+      <label>{props.label}</label>
       <input className={styles.textInput} {...input} type='text' />
     </div>
   );

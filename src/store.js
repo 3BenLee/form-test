@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import createReducer from './reducers/step-one-reducer';
+import createReducer from './reducers/address-form';
 
 const composeEnhancers =
   typeof window === 'object' &&

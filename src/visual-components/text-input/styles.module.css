@@ -11,4 +11,5 @@
 .textInput:focus {
   background-color: #ffffff;
   border: 1px solid #00adee;
+  outline: none;
 }

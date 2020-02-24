@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import StepOne from './containers/step-one/step-one-form';
+import AddressForm from './containers/address-form/address-form';
 
 function App() {
   return (
     <div className='App'>
-      <StepOne />
+      <AddressForm />
     </div>
   );
 }

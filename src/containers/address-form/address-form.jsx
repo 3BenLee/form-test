@@ -1,22 +1,36 @@
 import React from 'react';
-import { reduxForm, Field } from 'redux-form';
+import { reduxForm } from 'redux-form';
+
 import { Button } from '../../visual-components/button/button';
-import styles from './styles.module.css';
-import { renderInput } from '../../helpers/renderInput';
+import { TextField } from '../../visual-components/text-field/text-field';
+
+// import { Input } from '../../visual-components/input/input';
+import { WelcomeArea } from '../../visual-components/welcome-area/welcome-area';
 import { validate } from '../../helpers/validate';
 
-let AddressForm = ({ handleSubmit, submitting }) => {
+import styles from './styles.module.css';
+
+const fieldData = [
+  { label: 'First Name', name: 'firstName' },
+  { label: 'Last Name', name: 'lastName' },
+  { label: 'Address One', name: 'addressOne' },
+  { label: 'AddressTwo', name: 'addressTwo' }
+];
+
+const AddressForm = ({ handleSubmit, submitting }) => {
   const submitForm = formValues => {
     console.log('submitting Form: ', formValues);
   };
 
+  const fields = fieldData.map((item, index) => {
+    return <TextField key={index} label={item.label} name={item.name} />;
+  });
+
   return (
     <div className={styles.container}>
-      <form onSubmit={handleSubmit(submitForm)}>
-        <Field component={renderInput} label='First Name' name='firstName' />
-        <Field component={renderInput} label='Last Name' name='lastName' />
-        <Field component={renderInput} label='Address One' name='addressOne' />
-        <Field component={renderInput} label='Address Two' name='addressTwo' />
+      <WelcomeArea />
+      <form className={styles.formWrapper} onSubmit={handleSubmit(submitForm)}>
+        {fields}
         <Button type='submit' text='Submit' />
       </form>
     </div>

@@ -1,1 +1,7 @@
-.container {}
+.container {
+  display: flex;
+}
+
+.formWrapper {
+  padding: 105px 0 0 24px;
+}

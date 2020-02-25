@@ -1,0 +1,19 @@
+.container {
+  height: 100vh;
+  width: 55%;
+  background: grey;
+  color: white;
+  position: relative;
+}
+
+.wrapper {
+  width: 78%;
+  height: 100vh;
+  float: right;
+}
+
+.logo {
+  margin: 32px 0 45px 0;
+}
+
+.welcome {}
